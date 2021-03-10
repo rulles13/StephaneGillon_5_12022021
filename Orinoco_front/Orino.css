@@ -1,5 +1,11 @@
-img{
+.imgSmall{
     width: 300px;
-    
+}
 
+.imgBig{
+    width: 600px;
+}
+
+td{
+    width:150px;
 }

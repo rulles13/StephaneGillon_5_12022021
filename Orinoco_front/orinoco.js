@@ -1,13 +1,7 @@
-
-const request = new XMLHttpRequest();
-
-request.open('GET', 'http://localhost:3000/api/cameras');
-request.send();
-request.addEventListener('readystatechange', () => {
-    if(request.readyState === 4){
-        const magasin = JSON.parse(request.responseText);
-        //console.log(magasin.length);
-        console.log(magasin);
+fetch('http://localhost:3000/api/cameras')
+    .then(response => response.json())
+    .then(json => {console.log(json)
+        const magasin = json;
         for (let i in magasin){
             
             
@@ -16,19 +10,26 @@ request.addEventListener('readystatechange', () => {
             const myName = document.createElement("h2");
             const myPict = document.createElement("img");
             const myDescription = document.createElement("p");
+            
+            const myLink = document.createElement("a");
 
             myName.textContent = magasin[i].name;
+            myPict.setAttribute("class","imgSmall");
             myPict.setAttribute("src", magasin[i].imageUrl);
-            console.log("image",magasin[i].imageUrl);
             myDescription.textContent = magasin[i].description;
+            
+            myLink.setAttribute ("href","produit.html?id=" + magasin[i]._id);
+            myLink.textContent ="cliquez-ici";
+            
             elt.appendChild(myDiv);
             myDiv.appendChild(myName);
             myDiv.appendChild(myPict);
+            myDiv.appendChild(myLink);
             myDiv.appendChild(myDescription);
-        }
-        
-    }
-    else(console.error);
-}
 
-)
+        }
+    })
+        
+    .catch(console.error);
+
+
