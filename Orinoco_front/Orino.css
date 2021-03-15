@@ -1,3 +1,6 @@
+body{font-family: 'Nunito', sans-serif;
+}
+
 .imgSmall{
     width: 300px;
 }
@@ -9,3 +12,10 @@
 td{
     width:150px;
 }
+/* color Orinoco */
+.bg-pink{background-color: #F3E9F1;}
+.txt-pink{color: #F3E9F1;}
+.bg-orange{background-color: #E78B07;}
+.txt-orange{color: #E78B07;}
+.bg-purple{background-color: #8F5BFE;}
+.txt-purple{color: #8F5BFE;}

@@ -13,10 +13,11 @@ fetch('http://localhost:3000/api/cameras')
             
             const myLink = document.createElement("a");
 
+            myDiv.setAttribute("class","card-sm")
             myName.textContent = magasin[i].name;
             myPict.setAttribute("class","imgSmall");
             myPict.setAttribute("src", magasin[i].imageUrl);
-            myDescription.textContent = magasin[i].description;
+            myDescription.textContent = magasin[i].price/100 + " euro";
             
             myLink.setAttribute ("href","produit.html?id=" + magasin[i]._id);
             myLink.textContent ="cliquez-ici";

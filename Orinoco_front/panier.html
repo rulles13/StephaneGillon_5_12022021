@@ -10,12 +10,78 @@
     <script src="panier.js" defer></script>
 </head>
 <body>
+    <header> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-pink">
+          <a class="navbar-brand" href="#">
+            <img src="../images/logo_orinoco_400x120px.png" width="400" height="120" alt="logo Orinoco">
+          </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="./index.html">shop <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="./panier.html">panier</a>
+                
+              </div>
+            </div>
+          </nav>
+          
+    </header>
+
     <div class="container">
-        <h1>votre panier: </h1>
-        <table id="monPanier">
-            
-        </table>
+        <div>
+            <h1>votre panier: </h1>
+            <table id="monPanier">
+            </table>
+        </div>
+
+        <div id="totalPanier">
+
+        </div>
+        <div class="col" id="rightform">
+        <div id="Sectionformulaire">
+            <p>Veuillez remplir ce formulaire afin d'effectuer le paiement de votre commande.</p>
+            <form method="post" id="formulaire">
+                <fieldset> <!--Identité-->
+                    <legend>Civilité</legend>
+                    <div class="row identité">
+                        <label for="Nomform" class="labelform">Nom :</label>
+                        <input type="text" id="Nomform" name="Nomform" placeholder="Nom" required>
+                    </div>
+                    <div class="row identité">
+                        <label for="Prénom" class="labelform">Prénom :</label>
+                        <input type="text" name="Prénom" id="Prénom" placeholder="Prénom" required>
+                    </div>
+                    <div class="row identité">
+                        <label for="Email" class="labelform">Adresse mail :</label>
+                        <input type="email" name="Email" id="Email" placeholder="Email" required>
+                    </div>
+                </fieldset>
+                <fieldset class="facturation"> <!--Adresse de facturation-->
+                    <legend>Adresse de facturation</legend>
+                    <div class="row identité">
+                        <label for="Adresse" class="labelform">Adresse :</label>
+                        <input type="text" name="Adresse" id="Adresse" placeholder="Adresse" required>
+                    </div>
+                    <div class="row identité">
+                        <label for="Ville" class="labelform">Ville :</label>
+                        <input type="text" name="Ville" id="Ville" placeholder="Ville" required>
+                    </div>
+                    <div class=" row identité">
+                        <label for="Codepostal" class="labelform">Code postal :</label>
+                        <input type="number" name="Codepostal" id="Codepostal" placeholder="Code postal" required>
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn" id="formbutton">Envoyer</button>
+            </form>
+        </div>
     </div>
-    
+    <footer>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
