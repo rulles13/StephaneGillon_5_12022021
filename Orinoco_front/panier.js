@@ -1,4 +1,5 @@
 let totalPanier = 0;
+let idArray =[];
 
 /* ---- test if local storage exist ----- */
 if(localStorage.getItem("panierOrinoco")){
@@ -10,7 +11,7 @@ if(localStorage.getItem("panierOrinoco")){
         
     //first ligne table
     let monPanier = document.getElementById("monPanier");    
-    monPanier.innerHTML="<tr> <td>Appareil</td> <td>optique</td> <td>prix</td><td>Quantité</td></tr>"
+    monPanier.innerHTML="<thead> <tr> <th>Appareil</th> <th>optique</th> <th>prix</th><th>Quantité</th></tr> </thead>"
             
 
     //article ligne table
@@ -36,16 +37,17 @@ if(localStorage.getItem("panierOrinoco")){
     }  
     console.log(panier);
 
-    let idArray = panier.map(camera => camera.id) //creation d'un tableau simplifié pour POST
+//creation d'un tableau simplifié pour POST
+    idArray = panier.map(camera => camera.id)
     console.log(idArray);
-//to do: calculate total
+//calcul du prix total
     for (let i in panier){
     totalPanier += panier[i].price/100;
 
     console.log(panier[i].price/100);
     }
     const total = document.getElementById("totalPanier");
-    total.textContent ="Le total de votre panier est: " + totalPanier + " €";
+    total.textContent ="Le total de votre panier est: " + totalPanier + " euros";
 
 }
 
@@ -62,7 +64,7 @@ console.log("Il n'ya pas d'article dans le panier");
 
 const commande = {
     contact: {},
-    products: [],
+    idArray: [],
 }
 
 document.getElementById("formulaire").addEventListener("submit", function (envoi){
@@ -89,11 +91,6 @@ document.getElementById("formulaire").addEventListener("submit", function (envoi
             city: villeForm,
             email: emailForm,
         }    
-        
-        //Création du tableau des articles
-        panier.forEach(articlePanier =>
-            commandeUser.products.push(articlePanier._id)
-        )
 
         //Envoi des données récupérées
         const optionsFetch = {
@@ -101,13 +98,13 @@ document.getElementById("formulaire").addEventListener("submit", function (envoi
                 'Content-Type': 'application/json',
             },
             method:"POST",
-            body: JSON.stringify(commandeUser),         
+            body: JSON.stringify(commande),         
         }     
 
-        fetch(urlOrder, optionsFetch).then(function(response) {
+        fetch('http://localhost:3000/api/cameras/order', optionsFetch).then(function(response) {
             response.json().then(function(text) {
               console.log(text.orderId);
-              window.location = `./confirmation.html?id=${text.orderId}&name=${prenomForm}&prix=${total}`
+              window.location = `./confirmation.html?id=${text.orderId}&name=${prenomForm}&prix=${totalPanier}`
             });
         });
         localStorage.clear()       

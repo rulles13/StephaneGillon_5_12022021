@@ -1,3 +1,5 @@
+// affichage du catalogue
+
 fetch('http://localhost:3000/api/cameras')
     .then(response => response.json())
     .then(json => {console.log(json)
@@ -9,24 +11,25 @@ fetch('http://localhost:3000/api/cameras')
             const myDiv = document.createElement("div");
             const myName = document.createElement("h2");
             const myPict = document.createElement("img");
-            const myDescription = document.createElement("p");
+            const myPrice = document.createElement("p");
             
             const myLink = document.createElement("a");
 
-            myDiv.setAttribute("class","card-sm")
+            myDiv.setAttribute("class","smallCard")
             myName.textContent = magasin[i].name;
             myPict.setAttribute("class","imgSmall");
             myPict.setAttribute("src", magasin[i].imageUrl);
-            myDescription.textContent = magasin[i].price/100 + " euro";
+            myPrice.textContent = magasin[i].price/100 + " euro";
             
             myLink.setAttribute ("href","produit.html?id=" + magasin[i]._id);
-            myLink.textContent ="cliquez-ici";
+            myLink.textContent ="voir le produit";
             
             elt.appendChild(myDiv);
             myDiv.appendChild(myName);
             myDiv.appendChild(myPict);
+            myDiv.appendChild(myPrice);
             myDiv.appendChild(myLink);
-            myDiv.appendChild(myDescription);
+            
 
         }
     })
