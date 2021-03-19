@@ -57,7 +57,7 @@ function setLocalStorage(camera) {
 
         let price = camera.price;
         let name = camera.name;
-        let lens = theLens.options[theLens.selectedIndex].text; //récupération de l'optique sélectionnée
+        let lens = theLens.options[theLens.selectedIndex].text; //return of selected lens
         let qty = 1;
         let id = camera._id;
                 
