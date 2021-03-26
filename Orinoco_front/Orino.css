@@ -7,12 +7,35 @@
 .txt-purple{color: #8F5BFE;}
 
 /* h */
-h1{font-size: 2rem;color: #8F5BFE;}
+h1{font-size: 2rem;color: #8F5BFE; padding-top: 2rem;}
 h2{font-size: 1.5rem;padding-top: 10px;}
 
 /* font */
 body{font-family: 'Nunito', sans-serif;}
 
+/* navigation */
+.navigation{
+    background-color:  #F3E9F1;
+    font-size: 1.5rem;    
+}
+.nav-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.links{
+    display: flex;
+    
+    align-self: center;
+}
+.links a{
+    color: #8F5BFE;
+    border-bottom: 2px solid transparent;
+}
+.links a:hover{
+    color: #E78B07;
+    border-bottom: 2px solid #E78B07;
+}
 /* CSS */
 #appareils{
     display: flex;
@@ -31,10 +54,6 @@ body{font-family: 'Nunito', sans-serif;}
     width: 100%;
 }
 
-.imgBig{
-    width: 600px;
-}
-
 td{
     width:150px;
 }
@@ -45,4 +64,31 @@ thead{
 .labelform{
     width: 120px;
     
+}
+.butn-purple {
+    background-color: #8f5bfe;
+    border-radius: 20px;
+    color: white;
+    box-shadow: black;
+  }
+.butn-purple:hover{
+    background-color: #E78B07;
+}
+/* page produit */
+#produit{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0;
+}
+#produitInfo{
+    width: 300px;
+    padding: 20px;
+}
+.imgBig{
+    min-width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    border: 2px solid  #E78B07;
+    padding: 5px;
 }

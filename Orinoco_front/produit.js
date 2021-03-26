@@ -25,8 +25,8 @@ function renderCamera(cameraData) {
     }    
         
     /* --- create HTML elements --- */    
-    let elt = document.getElementById("produit");
-    const myDiv = document.createElement("div");
+    let eltPhoto = document.getElementById("produitPhoto");
+    let eltInfo = document.getElementById("produitInfo");
     const myName = document.createElement("h2");
     const myPict = document.createElement("img");
     const myDescription = document.createElement("p"); 
@@ -40,11 +40,12 @@ function renderCamera(cameraData) {
     orderButton.textContent ="commander";
             
     /* --- send elements to HTML --- */
-    elt.appendChild(myDiv);
-    myDiv.appendChild(myName);
-    myDiv.appendChild(myPict);
-    myDiv.appendChild(orderButton);
-    myDiv.appendChild(myDescription);
+    
+    eltInfo.appendChild(myName);
+    eltInfo.appendChild(myDescription);
+    eltInfo.appendChild(orderButton);
+
+    eltPhoto.appendChild(myPict);
 
     orderButton.addEventListener("click", function(){
         setLocalStorage (cameraData);
@@ -66,15 +67,13 @@ function setLocalStorage(camera) {
         
         //console.log(caddy);
         const panier_json = JSON.stringify(panier);
-        
-        
-        
+         
         // write caddy in localStorage
         localStorage.setItem("panierOrinoco", panier_json);
-        
-
 }
+
 /* -------------------- get 1 camera -------------------- */
+
 fetch(url + "/" + camId)
     .then(response => response.json())
     .then(json => {

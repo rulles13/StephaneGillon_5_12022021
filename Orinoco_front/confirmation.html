@@ -10,27 +10,29 @@
     <script src="confirmation.js" defer></script>
 </head>
 <body>
-    <header> 
-        <nav class="navbar navbar-expand-lg navbar-light bg-pink">
-          <a class="navbar-brand">
-            <img src="../images/logo_orinoco_400x120px.png" width="400" height="120" alt="logo Orinoco">
+  <header> 
+    <nav class="navigation">
+      <div class="container">
+        <div class="nav-flex">
+          <a href="./index.html">
+          <img src="../images/logo_orinoco_400x120px.png" width="400" height="120" alt="logo Orinoco">
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">shop <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="./panier.html">panier</a>
-              </div>
+          <div class="links">
+            <a class="nav-item nav-link active" href="./index.html">shop</a>
+            <a class="nav-item nav-link" href="./panier.html">panier</a>
           </div>
-        </nav>
-          
-    </header>
+        </div>
+      </nav>
+    </div>     
+  </header>
+
     <div class="container">
+      <div class="col">
         <h1>Merci pour votre commande</h1>
-        <img src="/images/merci.jpg" alt="Des jolies photos colorées éparpillées">
         <div id="confirmation"></div>
+        <img src="/images/merci.jpg" alt="Des jolies photos colorées éparpillées">
+        
+      </div>  
     </div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

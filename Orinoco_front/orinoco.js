@@ -5,8 +5,7 @@ fetch('http://localhost:3000/api/cameras')
     .then(json => {console.log(json)
         const magasin = json;
         for (let i in magasin){
-            
-            
+             
             let elt = document.getElementById("appareils");
             const myDiv = document.createElement("div");
             const myName = document.createElement("h2");
@@ -29,9 +28,7 @@ fetch('http://localhost:3000/api/cameras')
             myDiv.appendChild(myPict);
             myDiv.appendChild(myPrice);
             myDiv.appendChild(myLink);
-            
-
-        }
+            }
     })
         
     .catch(console.error);
