@@ -1,8 +1,10 @@
 const params = new URLSearchParams(window.location.search);
 let camId = params.get("id");
-let url ="http://localhost:3000/api/cameras";
+let url = "http://localhost:3000/api/cameras";
 let panier = JSON.parse(localStorage.getItem("panierOrinoco"));
-if(panier === null){panier = [];}
+if(panier === null){
+    panier = [];
+}
 
 class cameraToAdd {
     constructor(price, name, lens, quantity, id) {
@@ -17,7 +19,7 @@ class cameraToAdd {
 function renderCamera(cameraData) {
         
     /* --- lens chose --- */        
-    let lensChose= document.getElementById("lens")
+    let lensChose = document.getElementById("lens")
     for (let i in cameraData.lenses){
         const myLens = document.createElement("option")
         myLens.textContent = cameraData.lenses[i]
@@ -37,7 +39,8 @@ function renderCamera(cameraData) {
     myPict.setAttribute("class","imgBig");
     myPict.setAttribute("src", cameraData.imageUrl);
     myDescription.textContent = cameraData.description; 
-    orderButton.textContent ="commander";
+    orderButton.setAttribute("class","butn-purple");
+    orderButton.textContent ="ajouter au panier";
             
     /* --- send elements to HTML --- */
     
@@ -64,7 +67,7 @@ function setLocalStorage(camera) {
                 
         let plusCamera = new cameraToAdd(price,name,lens,qty,id);
         panier.push(plusCamera); 
-        
+        window.location.reload();
         //console.log(caddy);
         const panier_json = JSON.stringify(panier);
          

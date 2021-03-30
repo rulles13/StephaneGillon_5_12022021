@@ -13,12 +13,12 @@ const commande = {
 function cleaning() {
     localStorage.clear();
     console.log("Il n'ya pas d'article dans le panier");    
-    monPanier.innerHTML="Malheureusement vous n'avez pas encore sélectionné d'article.";
-    total.textContent ="";
+    monPanier.innerHTML = "Malheureusement vous n'avez pas encore sélectionné d'article.";
+    total.textContent = "";
     let btn = document.getElementById("clearButton");
     btn.style.display = "none"; //hide clear button
     document.getElementById("formulaire").style.display = "none"; //hide formulaire
-
+    document.getElementById("Numberarticle").textContent = 0;
 }
 
 function makeBill() {   
@@ -55,8 +55,6 @@ function makeBill() {
 //total price
     for (let i in panier){
         totalPanier += panier[i].price/100;
-
-        console.log(panier[i].price/100);
     }
     
     total.textContent ="Le total de votre panier est: " + totalPanier + " euros";
@@ -110,8 +108,5 @@ if(localStorage.getItem("panierOrinoco")){
     createClient();
 }
 else{
-    cleaning();    
+    cleaning();;   
 } 
-
-
-

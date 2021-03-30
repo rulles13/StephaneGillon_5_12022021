@@ -14,21 +14,21 @@ fetch('http://localhost:3000/api/cameras')
             
             const myLink = document.createElement("a");
 
-            myDiv.setAttribute("class","smallCard")
+            myDiv.setAttribute("class", "smallCard")
             myName.textContent = magasin[i].name;
-            myPict.setAttribute("class","imgSmall");
+            myPict.setAttribute("class", "imgSmall");
             myPict.setAttribute("src", magasin[i].imageUrl);
             myPrice.textContent = magasin[i].price/100 + " euro";
             
-            myLink.setAttribute ("href","produit.html?id=" + magasin[i]._id);
-            myLink.textContent ="voir le produit";
+            myLink.setAttribute ("href", "produit.html?id=" + magasin[i]._id);
+            myLink.textContent = "voir le produit";
             
             elt.appendChild(myDiv);
             myDiv.appendChild(myName);
             myDiv.appendChild(myPict);
             myDiv.appendChild(myPrice);
             myDiv.appendChild(myLink);
-            }
+        }
     })
         
     .catch(console.error);
