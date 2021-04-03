@@ -60,17 +60,24 @@ td{
 thead{
     color: #E78B07;
 }
-
+.identité{
+    text-align: center;
+}
 .labelform{
     width: 120px;
-    
+    display: flex;
 }
-.butn-purple {
+.flexCenter{
+    display: flex;
+    justify-content: center;
+}
+.butn-purple, .butn-purple:after {
     background-color: #8f5bfe;
     border-radius: 20px;
     color: white;
     box-shadow: black;
     align-content: center;
+    margin: 20px 0;
   }
 .butn-purple:hover{
     background-color: #E78B07;
@@ -87,9 +94,27 @@ thead{
     padding: 20px;
 }
 .imgBig{
-    min-width: 90%;
     max-width: 600px;
     border-radius: 20px;
     border: 2px solid  #E78B07;
     padding: 5px;
+}
+
+#totalPanier{
+    margin-bottom: 20px;
+}
+
+footer{
+    background-color: #F3E9F1;
+}
+
+.imgMerci{
+    text-align: center;
+    width: 100%;
+}
+
+@media only screen and (max-width: 800px){
+    .imgBig{
+        max-width: 300px;
+    }
 }

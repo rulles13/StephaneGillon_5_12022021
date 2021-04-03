@@ -11,8 +11,7 @@ const commande = {
 }
 /* ***************** function ***************** */
 function cleaning() {
-    localStorage.clear();
-    console.log("Il n'ya pas d'article dans le panier");    
+    localStorage.clear();   
     monPanier.innerHTML = "Malheureusement vous n'avez pas encore sélectionné d'article.";
     total.textContent = "";
     let btn = document.getElementById("clearButton");
@@ -108,5 +107,5 @@ if(localStorage.getItem("panierOrinoco")){
     createClient();
 }
 else{
-    cleaning();;   
+    cleaning();   
 } 

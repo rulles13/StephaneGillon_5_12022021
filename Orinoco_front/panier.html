@@ -17,7 +17,8 @@
             <div class="container">
                 <div class="nav-flex">
                     <a href="./index.html">
-                        <img src="../Orinoco_back/images/logo_orinoco_400x120px.png" width="400" height="120" alt="logo Orinoco">
+                        <img src="../Orinoco_back/images/logo_orinoco_400x120px.png" width="400" height="120"
+                            alt="logo Orinoco">
                     </a>
                     <div class="links">
                         <a class="nav-item nav-link active" href="./index.html">shop</a>
@@ -29,68 +30,74 @@
     </header>
 
     <div class="container">
-        <div>
-            <h1>votre panier: </h1>
-            <table id="monPanier" class="table">
-            </table>
-        </div>
+        <div class="row justify-content-between">
+            <div class="col-lg-6 col-md-12">
+                <div>
+                    <h1>votre panier: </h1>
+                    <table id="monPanier" class="table">
+                    </table>
+                </div>
 
-        <div id="totalPanier">
+                <div id="totalPanier">
+                </div>
 
-        </div>
-        <button type="button" class="butn-purple" id="clearButton">vider le panier</button>
-        <div class="col">
-            
-            <form method="post" id="formulaire">
-                <p>Veuillez remplir ce formulaire afin d'effectuer le paiement de votre commande.</p>
-                <fieldset>
-                    <!--Identité-->
-                    <legend>Civilité</legend>
-                    <div class="row identité">
-                        <label for="Nomform" class="labelform">Nom :</label>
-                        <input type="text" id="Nomform" name="Nomform" placeholder="Nom" required>
-                    </div>
-                    <div class="row identité">
-                        <label for="Prénom" class="labelform">Prénom :</label>
-                        <input type="text" name="Prénom" id="Prénom" placeholder="Prénom" required>
-                    </div>
-                    <div class="row identité">
-                        <label for="Email" class="labelform">Adresse mail :</label>
-                        <input type="email" name="Email" id="Email" placeholder="Email" required>
-                    </div>
-                </fieldset>
-                <fieldset class="facturation">
-                    <!--Adresse de facturation-->
-                    <legend>Adresse de facturation</legend>
-                    <div class="row identité">
-                        <label for="Adresse" class="labelform">Adresse :</label>
-                        <input type="text" name="Adresse" id="Adresse" placeholder="Adresse" required>
-                    </div>
-                    <div class="row identité">
-                        <label for="Ville" class="labelform">Ville :</label>
-                        <input type="text" name="Ville" id="Ville" placeholder="Ville" required>
-                    </div>
-                    <div class=" row identité">
-                        <label for="Codepostal" class="labelform">Code postal :</label>
-                        <input type="number" name="Codepostal" id="Codepostal" placeholder="Code postal" required>
-                    </div>
-                </fieldset>
-                <button type="submit" class="butn-purple" id="formbutton">Envoyer</button>
-            </form>
-        </div>
-        <footer>
+                <div>
+                    <button type="button" class="butn-purple flexCenter" id="clearButton">vider le panier</button>
+                </div>
+            </div>
 
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-        <script src="JS/general.js"></script>
+            <div class="col-lg-5 col-md-12">
+
+                <form method="post" id="formulaire">
+                    <p>Veuillez remplir ce formulaire afin de valider votre commande.</p>
+                    <fieldset>
+                        <!--Identité-->
+                        <legend>Civilité</legend>
+                        <div class="row identité">
+                            <label for="Nomform" class="labelform">Nom :</label>
+                            <input type="text" id="Nomform" name="Nomform" placeholder="Nom" required>
+                        </div>
+                        <div class="row identité">
+                            <label for="Prénom" class="labelform">Prénom :</label>
+                            <input type="text" name="Prénom" id="Prénom" placeholder="Prénom" required>
+                        </div>
+                        <div class="row identité">
+                            <label for="Email" class="labelform">Adresse mail :</label>
+                            <input type="email" name="Email" id="Email" placeholder="Email" required>
+                        </div>
+                    </fieldset>
+                    <fieldset class="facturation">
+                        <!--Adresse de facturation-->
+                        <legend>Adresse de facturation</legend>
+                        <div class="row identité">
+                            <label for="Adresse" class="labelform">Adresse :</label>
+                            <input type="text" name="Adresse" id="Adresse" placeholder="Adresse" required>
+                        </div>
+                        <div class="row identité">
+                            <label for="Ville" class="labelform">Ville :</label>
+                            <input type="text" name="Ville" id="Ville" placeholder="Ville" required>
+                        </div>
+                        <div class=" row identité">
+                            <label for="Codepostal" class="labelform">Code postal :</label>
+                            <input type="number" name="Codepostal" id="Codepostal" placeholder="Code postal" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="butn-purple" id="formbutton">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="JS/general.js"></script>
 </body>
 
 </html>
