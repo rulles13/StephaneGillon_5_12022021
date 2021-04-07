@@ -1,4 +1,5 @@
-let paramsConf = new URLSearchParams(window.location.search);
+function confirmation(){
+  let paramsConf = new URLSearchParams(window.location.search);
 
 let elt = document.getElementById("confirmation");
 const myPara = document.createElement("p");
@@ -12,4 +13,7 @@ myPara.textContent ="Cher "
 + " euros"
 + " vous sera livrée sous peu.";
 
-elt.appendChild(myPara);``
+elt.appendChild(myPara);
+}
+
+confirmation();

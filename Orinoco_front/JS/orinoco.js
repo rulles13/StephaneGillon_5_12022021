@@ -8,11 +8,9 @@ fetch('http://localhost:3000/api/cameras')
         renderCameras(magasin);
     })
     .catch (error => {
-    
         alert("Il s'est produit une erreur de connection avec le serveur", error);
     });
     
-
 function renderCameras(magasin) {
     for (let i in magasin) {
 
@@ -21,7 +19,6 @@ function renderCameras(magasin) {
         const myName = document.createElement("h2");
         const myPict = document.createElement("img");
         const myPrice = document.createElement("p");
-
         const myLink = document.createElement("a");
 
         myDiv.setAttribute("class", "smallCard")
@@ -29,7 +26,6 @@ function renderCameras(magasin) {
         myPict.setAttribute("class", "imgSmall");
         myPict.setAttribute("src", magasin[i].imageUrl);
         myPrice.textContent = magasin[i].price / 100 + " euro";
-
         myLink.setAttribute("href", "produit.html?id=" + magasin[i]._id);
         myLink.textContent = "voir le produit";
 

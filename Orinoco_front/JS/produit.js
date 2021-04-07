@@ -68,6 +68,7 @@ function setLocalStorage(camera) {
         let plusCamera = new cameraToAdd(price,name,lens,qty,id);
         panier.push(plusCamera); 
         window.location.reload();
+        
         //console.log(caddy);
         const panier_json = JSON.stringify(panier);
          
